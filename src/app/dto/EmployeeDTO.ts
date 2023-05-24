@@ -9,8 +9,15 @@ export interface EmployeeDTO{
     iban?:string;
     phoneNumber?:string;
     email?:string;
-    contractType?:string;   //enum
+    contractType?:ContractType;   
     contractStart?:Date;
     company?:number
 
+}
+
+export enum ContractType{
+    "indeterminato",
+    "determinato",
+    "apprendistato",
+    "tirocinio",
 }
