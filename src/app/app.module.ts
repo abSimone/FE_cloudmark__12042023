@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 
 

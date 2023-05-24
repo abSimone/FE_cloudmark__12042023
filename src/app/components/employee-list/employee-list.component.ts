@@ -1,5 +1,5 @@
 import { Component,inject,OnInit } from '@angular/core';
-import { EmployeeService } from '../services/employee.service';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -15,6 +15,7 @@ export class EmployeeListComponent implements OnInit{
   employeeList$=this.employeeService.getAllEmployee();
 
 
+  
   ngOnInit(): void {
     this.employeeService.getAllEmployee().subscribe({
       next:(data) =>{
