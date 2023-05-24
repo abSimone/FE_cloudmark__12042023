@@ -1,0 +1,17 @@
+p {
+    color: white;
+}
+
+.example-card {
+    max-width: 400px;
+    color: white;
+
+}
+
+.content {
+    padding: 16px;
+}
+
+.content>mat-card {
+    width: 200px;
+}
