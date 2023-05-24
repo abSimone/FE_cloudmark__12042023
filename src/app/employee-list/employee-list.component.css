@@ -1,9 +1,8 @@
-p {
+p,h2 {
     color: white;
 }
 
-.example-card {
-    max-width: 400px;
+.card {
     color: white;
 
 }
@@ -15,3 +14,4 @@ p {
 .content>mat-card {
     width: 200px;
 }
+
