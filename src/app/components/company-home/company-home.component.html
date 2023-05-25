@@ -50,11 +50,17 @@
             <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-            <p class="card-text">
+            <p class="card-text">Contacts:</p>
+            <ul>
+              <li>{{ company.email }}</li>
+              <li>{{ company.phoneNumber }}</li>
+            </ul>
+
+            <!-- <p class="card-text">
               Contacts: <br/>
               - {{ company.email }} <br/>
               - {{ company.phoneNumber }}
-            </p>
+            </p> -->
             <mat-divider></mat-divider>
           </mat-card-content>
           <mat-card-actions>

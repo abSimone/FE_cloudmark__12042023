@@ -67,6 +67,15 @@ mat-card-actions {
 .card-text {
   color: #ffffff;
   margin-top: 8px;
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 0;
+}
+
+li {
+  margin-left: -26px;
 }
 
 .card-button {
