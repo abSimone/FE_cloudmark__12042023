@@ -1,25 +1,67 @@
-<div class="container">
-  <div fxLayout="row wrap" fxLayoutGap="10px grid">
-    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%"
-      *ngFor="let company of companies">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ company.companyName }}</mat-card-title>
-          <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            Contacts: <br />
-            - {{ company.email }} <br />
-            - {{ company.phoneNumber }}
-          </p>
-          <mat-divider></mat-divider>
-        </mat-card-content>
-        <mat-card-actions>
-          <button class="open-button" mat-flat-button color="primary">Open</button>
-          <button mat-flat-button color="primary">Details</button>
-        </mat-card-actions>
-      </mat-card>
+<mat-drawer-container [hasBackdrop]="false">
+  <mat-drawer #drawer mode="side">
+    <div class="drawer-container">
+      <p class="drawer-text">Search</p>
+      <mat-form-field class="drawer-input" subscriptSizing="dynamic">
+        <mat-label>Company name</mat-label>
+        <input matInput [(ngModel)]="value">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="drawer-container">
+      <p class="drawer-text">Manage</p>
+      <button class="drawer-button" mat-flat-button color="primary">Add company</button>
+      <button class="delete-button" mat-flat-button color="primary">Delete company</button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="drawer-container">
+      <p class="drawer-text">Misc</p>
+      <button class="drawer-button" mat-flat-button color="primary">Export as CSV</button>
+    </div>
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-span">Company list</span>
+    <span class="toolbar-spacer"></span>
+    <span class="toolbar-span-user">User:</span>
+    <span class="toolbar-span-name">paolo897</span>
+    <button class="toolbar-button" mat-stroked-button>Log-out</button>
+  </mat-toolbar>
+  
+  <div class="cards-container">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%"
+        *ngFor="let company of companies">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ company.companyName }}</mat-card-title>
+            <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="contacts-text">
+              Contacts: <br />
+              - {{ company.email }} <br />
+              - {{ company.phoneNumber }}
+            </p>
+            <mat-divider></mat-divider>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="open-button" mat-flat-button color="primary">Open</button>
+            <button mat-flat-button color="primary">Details</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
   </div>
-</div>
+
+</mat-drawer-container>

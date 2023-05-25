@@ -14,8 +14,9 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {MatRippleModule} from "@angular/material/core";
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
-    MatRippleModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

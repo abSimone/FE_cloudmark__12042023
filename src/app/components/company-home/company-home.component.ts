@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CompanyDTO } from 'src/app/dto/companyDTO';
+import { CompanyDTO } from 'src/app/dto/CompanyDTO';
 import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
-  
   companies?: CompanyDTO[]
 
   ngOnInit() {
@@ -23,4 +22,6 @@ export class CompanyHomeComponent {
       }
     })
   }
+
+  value = 'Clear me';
 }
