@@ -1,0 +1,41 @@
+<h2>LIST OF JOBS</h2>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let job">{{ job.id }}</td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let job">{{ job.description }}</td>
+  </ng-container>
+
+  <!-- Start Date Column -->
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef> Start Date </th>
+    <td mat-cell *matCellDef="let job">{{ job.startDate }}</td>
+  </ng-container>
+
+  <!-- End Date Column -->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> End Date </th>
+    <td mat-cell *matCellDef="let job">{{ job.endDate }}</td>
+  </ng-container>
+
+  <!-- Installments Column -->
+  <ng-container matColumnDef="installments">
+    <th mat-header-cell *matHeaderCellDef> Installments </th>
+    <td mat-cell *matCellDef="let job">{{ job.installments }}</td>
+  </ng-container>
+
+
+  <!-- Header Row -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+  <!-- Data Rows -->
+  <tr mat-row *matRowDef="let job; columns: displayedColumns;"></tr>
+
+</table>
