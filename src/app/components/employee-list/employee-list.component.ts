@@ -6,6 +6,7 @@ import { EmployeeDetailComponent } from '../employee-detail/employee-detail.comp
 import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 
 
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -54,5 +55,20 @@ export class EmployeeListComponent implements OnInit {
     )
   }
 
+
+
+  esportaCSV(){
+    /* const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'abc.net/files/test.ino');
+    link.setAttribute('download', `products.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove(); */
+  }
+
+
+
+  
 
 }
