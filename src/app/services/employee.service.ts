@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { EmployeeDTO } from '../dto/EmployeeDTO';
 import { switchMap, toArray ,from} from 'rxjs';
 
@@ -27,6 +27,6 @@ export class EmployeeService {
   }
 
   updateEmployee(employee:EmployeeDTO){
-    return this.http.put<EmployeeDTO>(urlUpdateEmployee,employee)
+    return this.http.put<EmployeeDTO | HttpErrorResponse>(urlUpdateEmployee,employee)
   }
 }

@@ -4,9 +4,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeDTO } from 'src/app/dto/EmployeeDTO';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { DatePipe } from '@angular/common'
+import { HttpErrorResponse } from '@angular/common/http';
 
 
-const regexEmail="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+const regexEmail = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
 @Component({
   selector: 'app-employee-update-form',
@@ -18,7 +19,10 @@ export class EmployeeUpdateFormComponent implements OnInit {
   fb = inject(FormBuilder)
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
-  datePipe=inject(DatePipe);
+  datePipe = inject(DatePipe);
+
+
+  updateResult: number = 0
 
   employee = this.fb.group({
     firstName: this.fb.control("", [Validators.maxLength(50), Validators.required]),
@@ -28,7 +32,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
     city: this.fb.control("", [Validators.maxLength(20), Validators.required]),
     iban: this.fb.control("", [Validators.minLength(27), Validators.maxLength(27), Validators.required]),
     phoneNumber: this.fb.control("", [Validators.maxLength(20), Validators.required]),
-    email: this.fb.control("", [Validators.maxLength(50), Validators.required,Validators.pattern(regexEmail)]),
+    email: this.fb.control("", [Validators.maxLength(50), Validators.required, Validators.pattern(regexEmail)]),
     contractType: this.fb.control("", [Validators.required]),
     contractStart: this.fb.control("", [Validators.required]),
   })
@@ -50,7 +54,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
   }
 
   onSubmit() {
-    let employeeUpdated= {
+    let employeeUpdated = {
       id: this.dialogData.id,
       firstName: this.employee.value.firstName!,
       lastName: this.employee.value.lastName!,
@@ -61,23 +65,24 @@ export class EmployeeUpdateFormComponent implements OnInit {
       phoneNumber: this.employee.value.phoneNumber!,
       email: this.employee.value.email!,
       contractType: this.employee.value.contractType!,
-      contractStart: this.datePipe.transform(new Date(this.employee.value.contractStart!),'yyyy-MM-dd') as unknown as Date,
-      company:this.dialogData.company,
+      contractStart: this.datePipe.transform(new Date(this.employee.value.contractStart!), 'yyyy-MM-dd') as unknown as Date,
+      company: this.dialogData.company,
     }
-    
+
     console.log(employeeUpdated);
 
     this.employeeService.updateEmployee(employeeUpdated).subscribe(
-      (result)=>{
+      (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
-        
-        if(result.id!=employeeUpdated.id){
-          console.log("errore");
-        }
-        else{
-          console.log("successo");
-          
-        }
+
+
+        console.log("successo");
+        this.updateResult = 1
+
+      },
+      (error) => {
+        console.log(error);
+        this.updateResult = -1
       }
     );
 
