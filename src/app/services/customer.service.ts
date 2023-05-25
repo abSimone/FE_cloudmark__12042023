@@ -17,7 +17,7 @@ export class CustomerService {
   }
 
   findById(id : number) : Observable<CustomerDTO> {
-    const params : HttpParams = new HttpParams()
+    //const params : HttpParams = new HttpParams()
     return this.http.get<CustomerDTO>(urlCustomerById+id);
 
     /*  .set('customerId', id);
