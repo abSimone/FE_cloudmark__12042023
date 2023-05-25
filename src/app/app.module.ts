@@ -7,6 +7,7 @@ import { MaterialModule } from './module/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompanyHomeComponent } from './components/company-home/company-home.component';
 
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
@@ -18,9 +19,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 @NgModule({
   declarations: [
     AppComponent,
+    CompanyHomeComponent,
     EmployeeListComponent,
     CustomerListComponent
-
   ],
   imports: [
     BrowserModule,
@@ -28,10 +29,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-
-    
     FlexLayoutModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
