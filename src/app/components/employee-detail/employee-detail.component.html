@@ -1,0 +1,54 @@
+<mat-dialog-content >
+    <!-- <h2>{{dialogData.firstName}}  {{dialogData.lastName}}</h2>
+    <div>address:  {{dialogData.address}}</div>
+    <div>cap:  {{dialogData.cap}}</div>
+    <div>city:  {{dialogData.city}}</div>
+    <div>iban:  {{dialogData.iban}}</div>
+    <div>phoneNumber:  {{dialogData.phoneNumber}}</div>
+    <div>email:  {{dialogData.email}}</div>
+    <div>contractType:  {{dialogData.contractType}}</div>
+    <div>contractStart:  {{dialogData.contractStart}}</div> -->
+
+    <h2>{{dialogData.firstName}} {{dialogData.lastName}}</h2>
+    <table cellpadding="5">
+        <tr>
+            <td>address</td>
+            <td>{{dialogData.address}}</td>
+        </tr>
+        <tr>
+            <td>cap</td>
+            <td>{{dialogData.cap}}</td>
+        </tr>
+        <tr>
+            <td>city</td>
+            <td>{{dialogData.city}}</td>
+        </tr>
+        <tr>
+            <td>iban</td>
+            <td>{{dialogData.iban}}</td>
+        </tr>
+        <tr>
+            <td>phoneNumber</td>
+            <td>{{dialogData.phoneNumber}}</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>{{dialogData.email}}</td>
+        </tr>
+        <tr>
+            <td>contractType</td>
+            <td>{{dialogData.contractType}}</td>
+        </tr>
+        <tr>
+            <td>contractStart</td>
+            <td>{{dialogData.contractStart}}</td>
+        </tr>
+
+        
+    </table>
+    
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

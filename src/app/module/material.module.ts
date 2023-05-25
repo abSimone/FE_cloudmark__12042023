@@ -7,12 +7,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSelectModule } from '@angular/material/select'; 
+import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatDividerModule } from '@angular/material/divider'; 
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -31,7 +31,10 @@ import { MatDividerModule } from '@angular/material/divider';
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    
+    
   ]
 })
-export class MaterialModule {}
+export class MaterialModule { }
