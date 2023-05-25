@@ -1,56 +1,11 @@
-.drawer-container {
+.container {
   margin: 10px;
 }
 
-.cards-container {
-  margin: 10px;
+.mat-drawer-container {
+  height: 100%;
 }
 
-/* company card */
-
-mat-card-title {
-  color: #ffffff;
-}
-
-mat-card-actions {
-  margin: 8px;
-}
-
-.contacts-text {
-  color: #ffffff;
-  margin-top: 8px;
-}
-
-.open-button {
-  margin-right: 8px;
-}
-
-/* toolbar */
-
-.toolbar-span-user {
-  color: #c7c7c7;
-  font-size: 16px;
-  margin-right: 4px;
-}
-
-.toolbar-span-name {
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
-
-
-
-.toolbar-button {
-  margin-right: 10px;
-}
-
-.prova {
-  vertical-align: middle;
-}
 
 /* drawer */
 
@@ -63,6 +18,10 @@ mat-card-actions {
   text-align: center;
 }
 
+.drawer-input {
+  width: 100%;
+}
+
 .drawer-button {
   width: 100%;
 }
@@ -72,7 +31,44 @@ mat-card-actions {
   width: 100%;
 }
 
-.drawer-input {
-  width: 100%;
+
+/* toolbar */
+
+.toolbar-spacer {
+  flex: 1 1 auto;
 }
 
+.toolbar-span-user {
+  color: #c7c7c7;
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.toolbar-span-name {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.toolbar-button {
+  margin-right: 10px;
+}
+
+
+/* company cards */
+
+mat-card-title {
+  color: #ffffff;
+}
+
+mat-card-actions {
+  margin: 8px;
+}
+
+.card-text {
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.card-button {
+  margin-right: 8px;
+}
