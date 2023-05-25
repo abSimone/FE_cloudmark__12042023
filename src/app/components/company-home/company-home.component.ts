@@ -8,7 +8,6 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
-  companies$ = this.companyService.getCompanies()
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
