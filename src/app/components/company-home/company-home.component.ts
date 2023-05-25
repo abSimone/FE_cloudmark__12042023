@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CompanyDTO } from 'src/app/dto/CompanyDTO';
 import { CompanyService } from 'src/app/services/company.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CompanyDetailsComponent } from '../company-details/company-details.component';
 
 @Component({
   selector: 'app-company-home',
@@ -9,6 +11,8 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
+  matDialog = inject(MatDialog)
+
   companies?: CompanyDTO[]
 
   ngOnInit() {
@@ -21,6 +25,10 @@ export class CompanyHomeComponent {
         console.log('getCompanies error')
       }
     })
+  }
+
+  openDetails(company: CompanyDTO) {
+    this.matDialog.open(CompanyDetailsComponent, {data: company})
   }
 
   value = 'Clear me';
