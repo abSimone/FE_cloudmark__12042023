@@ -14,6 +14,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     AppComponent,
     CompanyHomeComponent,
     EmployeeListComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
