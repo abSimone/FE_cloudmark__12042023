@@ -5,6 +5,9 @@ import { EmployeeDTO } from 'src/app/dto/EmployeeDTO';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { DatePipe } from '@angular/common'
 
+
+const regexEmail="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
+
 @Component({
   selector: 'app-employee-update-form',
   templateUrl: './employee-update-form.component.html',
@@ -25,7 +28,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
     city: this.fb.control("", [Validators.maxLength(20), Validators.required]),
     iban: this.fb.control("", [Validators.minLength(27), Validators.maxLength(27), Validators.required]),
     phoneNumber: this.fb.control("", [Validators.maxLength(20), Validators.required]),
-    email: this.fb.control("", [Validators.maxLength(50), Validators.required]),
+    email: this.fb.control("", [Validators.maxLength(50), Validators.required,Validators.pattern(regexEmail)]),
     contractType: this.fb.control("", [Validators.required]),
     contractStart: this.fb.control("", [Validators.required]),
   })
