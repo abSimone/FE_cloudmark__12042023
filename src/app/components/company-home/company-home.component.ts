@@ -31,5 +31,5 @@ export class CompanyHomeComponent {
     this.matDialog.open(CompanyDetailsComponent, {data: company})
   }
 
-  value = 'Clear me';
+  value = '';
 }
