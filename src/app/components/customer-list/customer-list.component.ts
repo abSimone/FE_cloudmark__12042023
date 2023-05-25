@@ -1,20 +1,30 @@
-import { Component } from '@angular/core';
-import { CustomerServiceService} from "../../services/customer-service.service";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {CustomerService} from "../../services/customer.service";
+import {CustomerDTO} from "../../dto/CustomerDTO";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent {
+export class CustomerListComponent implements OnInit, OnDestroy{
 
-  customers : any;
+  customerList$: Observable<CustomerDTO[]> = this.customerService.findAll();
+  findAllSubscription! : Subscription;
 
-  constructor(private customerService : CustomerServiceService  ) {
+  constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
-    this.customerService.findAll().subscribe((customers) => this.customers = customers);
+    this.findAllSubscription = this.customerService.findAll().subscribe({next: data => console.log(data)});
   }
 
+  handleCardClick() {
+    alert("cliccato");
+  }
+
+  ngOnDestroy(): void {
+    this.findAllSubscription.unsubscribe();
+  }
 }

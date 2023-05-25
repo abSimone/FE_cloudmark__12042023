@@ -1,9 +1,22 @@
+<h2>LISTA CLIENTI</h2>
 
-<div class="container">
-  <h4 class="title">LIST OF CUSTOMERS</h4>
-  <ol class="customer-list">
-    <li *ngFor="let customer of customers; let i = index" class="customer-item">
-      {{ customer.customerName }}
-    </li>
-  </ol>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+    <div fxFlex="25%"
+         fxFlex.xs="100%"
+         fxFlex.md="33%"
+         fxFlex.sm="50%"
+         *ngFor="let customer of customerList$ | async">
+      <mat-card class="card mat-elevation-z4" matRipple (click)="handleCardClick()">
+        <mat-card-header>
+          <mat-card-title>{{customer.customerName}}</mat-card-title>
+          <mat-card-subtitle>{{customer.address}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{customer.phoneNumber}}</p>
+          <p>{{customer.email}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
