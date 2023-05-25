@@ -1,20 +1,25 @@
 <div class="container">
-  <mat-card *ngIf="companies">
-    <mat-card-header>
-      <mat-card-title>{{ companies[0].companyName }}</mat-card-title>
-      <mat-card-subtitle>{{ companies[0].address }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Contacts: <br>
-        - {{ companies[0].email }} <br>
-        - {{ companies[0].phoneNumber }}
-      </p>
-      <mat-divider></mat-divider>
-    </mat-card-content>
-    <mat-card-actions>
-      <button class="open-button" mat-flat-button color="primary">Open</button>
-      <button mat-flat-button color="primary">Details</button>
-    </mat-card-actions>
-  </mat-card>
+  <div fxLayout="row wrap" fxLayoutGap="10px grid">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%"
+      *ngFor="let company of companies">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ company.companyName }}</mat-card-title>
+          <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Contacts: <br />
+            - {{ company.email }} <br />
+            - {{ company.phoneNumber }}
+          </p>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="open-button" mat-flat-button color="primary">Open</button>
+          <button mat-flat-button color="primary">Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>

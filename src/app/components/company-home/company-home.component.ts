@@ -9,6 +9,7 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
+  
   companies?: CompanyDTO[]
 
   ngOnInit() {
