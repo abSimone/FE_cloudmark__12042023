@@ -1,4 +1,4 @@
-<mat-dialog-content>
+<mat-dialog-content >
     <!-- <h2>{{dialogData.firstName}}  {{dialogData.lastName}}</h2>
     <div>address:  {{dialogData.address}}</div>
     <div>cap:  {{dialogData.cap}}</div>
@@ -9,8 +9,8 @@
     <div>contractType:  {{dialogData.contractType}}</div>
     <div>contractStart:  {{dialogData.contractStart}}</div> -->
 
-    <h2>{{dialogData.firstName}}  {{dialogData.lastName}}</h2>
-    <table cellpadding ="10">
+    <h2>{{dialogData.firstName}} {{dialogData.lastName}}</h2>
+    <table cellpadding="5">
         <tr>
             <td>address</td>
             <td>{{dialogData.address}}</td>
@@ -43,9 +43,12 @@
             <td>contractStart</td>
             <td>{{dialogData.contractStart}}</td>
         </tr>
-    </table>
 
+        
+    </table>
+    
 </mat-dialog-content>
+
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>
