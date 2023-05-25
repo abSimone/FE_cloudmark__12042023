@@ -19,12 +19,14 @@ export class EmployeeListComponent implements OnInit {
 
   employeeList$ = this.employeeService.getAllEmployee();
 
-
+  isLoading:Boolean=true;
 
   ngOnInit(): void {
     this.employeeService.getAllEmployee().subscribe({
       next: (data) => {
         console.log(data);
+        this.isLoading=false;
+
       }
     });
   }

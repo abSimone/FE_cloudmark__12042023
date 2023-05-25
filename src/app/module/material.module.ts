@@ -13,6 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -33,8 +34,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatNativeDateModule,
     MatDividerModule,
     MatDialogModule,
-    
-    
+    MatProgressSpinnerModule
+
+
   ]
 })
 export class MaterialModule { }
