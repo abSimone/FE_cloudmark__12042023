@@ -101,9 +101,9 @@
         </div>
 
         <div [ngSwitch]="updateResult">
-            <div *ngSwitchCase="-1">Errore durante update</div>
+            <div *ngSwitchCase="-1" [ngStyle]="{'color':'red'}">Errore durante update</div>
             <div *ngSwitchCase="0"></div>
-            <div *ngSwitchCase="1">Update avvenuto con successo</div>
+            <div *ngSwitchCase="1" [ngStyle]="{'color':'green'}">Update avvenuto con successo</div>
         </div>
         
 
