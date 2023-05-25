@@ -14,6 +14,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatRippleModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

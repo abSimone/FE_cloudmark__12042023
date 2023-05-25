@@ -1,4 +1,4 @@
-<h2>Lista clienti</h2>
+<h2>LISTA CLIENTI</h2>
 
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid" >
@@ -7,7 +7,7 @@
          fxFlex.md="33%"
          fxFlex.sm="50%"
          *ngFor="let customer of customerList$ | async">
-      <mat-card class="card mat-elevation-z4">
+      <mat-card class="card mat-elevation-z4" matRipple (click)="handleCardClick()">
         <mat-card-header>
           <mat-card-title>{{customer.customerName}}</mat-card-title>
           <mat-card-subtitle>{{customer.address}}</mat-card-subtitle>
@@ -16,9 +16,6 @@
           <p>{{customer.phoneNumber}}</p>
           <p>{{customer.email}}</p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>GESTIONE COMMESSE</button>
-        </mat-card-actions>
       </mat-card>
     </div>
   </div>
