@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CompanyDTO } from 'src/app/dto/companyDTO';
 import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
@@ -8,11 +9,13 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
+  companies?: CompanyDTO[]
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
       next: (data: any) => {
         console.log(data)
+        this.companies = data
       },
       error: () => {
         console.log('getCompanies error')

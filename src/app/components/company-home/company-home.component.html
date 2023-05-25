@@ -1,16 +1,20 @@
 <div class="container">
-  <mat-card>
+  <mat-card *ngIf="companies">
     <mat-card-header>
-      <mat-card-title>Azienda 1</mat-card-title>
-      <mat-card-subtitle>Azienda</mat-card-subtitle>
+      <mat-card-title>{{ companies[0].companyName }}</mat-card-title>
+      <mat-card-subtitle>{{ companies[0].address }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>Email: azienda1@email.com</p>
-      <p>Phone number: 0123456789</p>
+      <p>
+        Contacts: <br>
+        - {{ companies[0].email }} <br>
+        - {{ companies[0].phoneNumber }}
+      </p>
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-stroked-button color="basic" >OPEN</button>
+      <button class="open-button" mat-flat-button color="primary">Open</button>
+      <button mat-flat-button color="primary">Details</button>
     </mat-card-actions>
   </mat-card>
 </div>

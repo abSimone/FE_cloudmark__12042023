@@ -9,4 +9,13 @@ mat-card-title {
 
 p {
   color: #ffffff;
+  margin-top: 8px;
+}
+
+mat-card-actions {
+  margin: 8px;
+}
+
+.open-button {
+  margin-right: 8px;
 }
