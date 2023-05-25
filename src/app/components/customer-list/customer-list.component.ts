@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { CustomerServiceService} from "../../services/customer-service.service";
+import {Component} from '@angular/core';
+import {CustomerService} from "../../services/customer.service";
+import {CustomerDTO} from "../../dto/CustomerDTO";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-customer-list',
@@ -8,13 +10,13 @@ import { CustomerServiceService} from "../../services/customer-service.service";
 })
 export class CustomerListComponent {
 
-  customers : any;
+  customerList$: Observable<CustomerDTO[]> = this.customerService.findAll();
 
-  constructor(private customerService : CustomerServiceService  ) {
+  constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
-    this.customerService.findAll().subscribe((customers) => this.customers = customers);
+    this.customerService.findAll().subscribe({next: data => console.log(data)});
   }
 
 }

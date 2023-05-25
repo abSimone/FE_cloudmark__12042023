@@ -1,20 +1,13 @@
-.title {
-  color: black;
-  font-size: 24px;
-  margin-bottom: 20px;
+p, h2 {
+  color: white;
 }
 
-.container {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 4px;
+.content {
+  padding: 32px;
 }
 
-.customer-list {
-  list-style-type: decimal;
-  padding-left: 20px;
+.card {
+  color: yellow;
+
 }
 
-.customer-item {
-  margin-bottom: 10px;
-}
