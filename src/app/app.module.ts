@@ -16,6 +16,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatRippleModule} from "@angular/material/core";
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
     CompanyHomeComponent,
     EmployeeListComponent,
     CustomerListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    CustomerHomeComponent
   ],
   imports: [
     BrowserModule,
