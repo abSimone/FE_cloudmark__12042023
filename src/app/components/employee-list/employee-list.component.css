@@ -1,0 +1,17 @@
+p,h2 {
+    color: white;
+}
+
+.card {
+    color: white;
+
+}
+
+.content {
+    padding: 16px;
+}
+
+.content>mat-card {
+    width: 200px;
+}
+

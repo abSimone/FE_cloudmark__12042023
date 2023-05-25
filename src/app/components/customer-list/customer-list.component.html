@@ -1,0 +1,9 @@
+
+<div class="container">
+  <h4 class="title">LIST OF CUSTOMERS</h4>
+  <ol class="customer-list">
+    <li *ngFor="let customer of customers; let i = index" class="customer-item">
+      {{ customer.customerName }}
+    </li>
+  </ol>
+</div>

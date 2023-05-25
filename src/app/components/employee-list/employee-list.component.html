@@ -1,0 +1,26 @@
+<h2>Lista dipendenti</h2>
+
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+        <div fxFlex="25%"
+             fxFlex.xs="100%"
+             fxFlex.md="33%"
+             fxFlex.sm="50%"  
+             *ngFor="let employee of employeeList$ | async">
+            <mat-card class="card mat-elevation-z4">
+                <mat-card-header>
+                    <mat-card-title>{{employee.firstName}} {{employee.lastName}}</mat-card-title>
+                    <mat-card-subtitle>{{employee.address}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{employee.phoneNumber}}</p>
+                    <p>{{employee.email}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>MODIFICA</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
