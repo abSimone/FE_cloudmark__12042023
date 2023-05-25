@@ -5,6 +5,7 @@ import { switchMap, toArray ,from} from 'rxjs';
 
 const urlAllEmployee="http://localhost:8080/api/employee/"
 const urlEmployeeById="http://localhost:8080/api/employee/id/"
+const urlUpdateEmployee="http://localhost:8080/api/employee/"
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class EmployeeService {
   }
   getEmployeeById(id:number){
     return this.http.get<EmployeeDTO>(urlAllEmployee+id)
+  }
+
+  updateEmployee(employee:EmployeeDTO){
+    return this.http.put<EmployeeDTO>(urlUpdateEmployee,employee)
   }
 }

@@ -3,6 +3,7 @@ import { EmployeeService } from '../../services/employee.service';
 import { EmployeeDTO } from 'src/app/dto/EmployeeDTO';
 import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
 import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';
+import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 
 
 @Component({
@@ -40,6 +41,16 @@ export class EmployeeListComponent implements OnInit {
     )
   }
 
+  
+  updateEmployee(employee: EmployeeDTO){
+    const dialogDetail = this.dialogDetail.open(EmployeeUpdateFormComponent,
+      {
+        data: employee,
+        width:"400px"
+        
+      }
+    )
+  }
 
 
 }

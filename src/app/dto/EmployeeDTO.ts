@@ -9,7 +9,7 @@ export interface EmployeeDTO{
     iban?:string;
     phoneNumber?:string;
     email?:string;
-    contractType?:ContractType;   
+    contractType?:string;   
     contractStart?:Date;
     company?:number
 

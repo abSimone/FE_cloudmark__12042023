@@ -15,6 +15,10 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common'
 
 
 @NgModule({
@@ -23,7 +27,8 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
     CompanyHomeComponent,
     EmployeeListComponent,
     CustomerListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeUpdateFormComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +36,12 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DatePipe
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
