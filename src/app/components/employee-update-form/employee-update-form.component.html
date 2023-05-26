@@ -1,0 +1,112 @@
+<h2>Update employee</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="employee" (ngSubmit)="onSubmit()">
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>firstName</mat-label>
+                <input matInput name="firstName" formControlName="firstName">
+                <mat-error (*ngIf)="!employee.controls.firstName.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>lastName</mat-label>
+                <input matInput name="lastName" formControlName="lastName">
+                <mat-error (*ngIf)="!employee.controls.lastName.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>address</mat-label>
+                <input matInput name="address" formControlName="address">
+                <mat-error (*ngIf)="!employee.controls.address.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>cap</mat-label>
+                <input matInput name="cap" formControlName="cap">
+                <mat-error (*ngIf)="!employee.controls.cap.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>city</mat-label>
+                <input matInput name="city" formControlName="city">
+                <mat-error (*ngIf)="!employee.controls.city.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>iban</mat-label>
+                <input matInput name="iban" formControlName="iban" maxlength="27">
+                <mat-error (*ngIf)="!employee.controls.iban.invalid">Necessari 27 caratteri</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>phoneNumber</mat-label>
+                <input matInput name="phoneNumber" formControlName="phoneNumber">
+                <mat-error (*ngIf)="!employee.controls.phoneNumber.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>email</mat-label>
+                <input matInput name="email" formControlName="email">
+                <mat-error (*ngIf)="!employee.controls.email.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>contractType</mat-label>
+                <mat-select name="contractType" formControlName="contractType">
+                    <mat-option value="indeterminato">indeterminato</mat-option>
+                    <mat-option value="determinato">determinato</mat-option>
+                    <mat-option value="apprendistato">apprendistato</mat-option>
+                    <mat-option value="tirocinio">tirocinio</mat-option>
+                </mat-select>
+                <mat-error (*ngIf)="!employee.controls.contractType.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field appearance="fill" [style.width.px]=300>
+                <mat-label>contractStart</mat-label>
+                <input type="date" matInput name="contractStart" formControlName="contractStart">
+                <mat-error (*ngIf)="!employee.controls.contractStart.invalid">Non valido</mat-error>
+            </mat-form-field>
+        </div>
+
+
+
+        <div>
+            <button mat-button mat-dialog-close>Close</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="sendStatus()">Send</button>
+        </div>
+
+        <div [ngSwitch]="updateResult">
+            <div *ngSwitchCase="-1" [ngStyle]="{'color':'red'}">Errore durante update</div>
+            <div *ngSwitchCase="0"></div>
+            <div *ngSwitchCase="1" [ngStyle]="{'color':'green'}">Update avvenuto con successo</div>
+        </div>
+        
+
+
+    </form>
+</mat-dialog-content>

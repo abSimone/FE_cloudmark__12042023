@@ -20,9 +20,6 @@ export class CustomerListComponent implements OnInit, OnDestroy{
     this.findAllSubscription = this.customerService.findAll().subscribe({next: data => console.log(data)});
   }
 
-  handleCardClick() {
-    alert("cliccato");
-  }
 
   ngOnDestroy(): void {
     this.findAllSubscription.unsubscribe();

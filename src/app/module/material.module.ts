@@ -16,6 +16,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
-    MatRippleModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
+    MatRippleModule,
     MatToolbarModule,
     MatSidenavModule
   ]

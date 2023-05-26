@@ -6,12 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './module/material.module';
+import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { CompanyHomeComponent } from './components/company-home/company-home.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 
 
@@ -22,6 +24,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
     CompanyDetailsComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,
+    EmployeeUpdateFormComponent,
     CustomerListComponent
   ],
   imports: [
@@ -32,9 +35,10 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    DatePipe
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
