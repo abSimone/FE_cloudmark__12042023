@@ -7,31 +7,6 @@
 }
 
 
-/* drawer */
-
-.mat-drawer {
-  width: 250px;
-}
-
-.drawer-text {
-  font-size: larger;
-  text-align: center;
-}
-
-.drawer-input {
-  width: 100%;
-}
-
-.drawer-button {
-  width: 100%;
-}
-
-.delete-button {
-  margin-top: 10px;
-  width: 100%;
-}
-
-
 /* toolbar */
 
 .toolbar-spacer {
@@ -54,7 +29,7 @@
 }
 
 
-/* company cards */
+/* cards */
 
 mat-card-title {
   color: #ffffff;
@@ -80,4 +55,36 @@ li {
 
 .card-button {
   margin-right: 8px;
+}
+
+
+/* drawer */
+
+.mat-drawer {
+  width: 250px;
+}
+
+.drawer-text {
+  font-size: larger;
+  text-align: center;
+}
+
+/* .drawer-divider {
+  vertical-align: middle;
+  width: 90%;
+} */
+
+.drawer-input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.drawer-button {
+  width: 100%;
+}
+
+.delete-button {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 100%;
 }
