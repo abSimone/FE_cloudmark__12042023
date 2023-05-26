@@ -1,57 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './module/material.module';
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CompanyHomeComponent } from './components/company-home/company-home.component';
-
-import { EmployeeListComponent } from './components/employee-list/employee-list.component';
-import { CustomerListComponent } from './components/customer-list/customer-list.component';
-
-
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatRippleModule} from "@angular/material/core";
-import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
-
-import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common'
 
-import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
-
+import { AppComponent } from './app.component';
+import { CompanyHomeComponent } from './components/company-home/company-home.component';
+import { CompanyDetailsComponent } from './components/company-details/company-details.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
+import { CustomerListComponent } from './components/customer-list/customer-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyHomeComponent,
+    CompanyDetailsComponent,
     EmployeeListComponent,
-    CustomerListComponent,
     EmployeeDetailComponent,
-
     EmployeeUpdateFormComponent,
-
-    CustomerHomeComponent
-
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    HttpClientModule,
-    FlexLayoutModule,
-
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DatePipe,
-    MatRippleModule
-
+    FlexLayoutModule,
+    HttpClientModule,
+    MaterialModule,
+    DatePipe
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

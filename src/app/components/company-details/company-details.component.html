@@ -1,0 +1,18 @@
+<mat-dialog-content>
+  <h2 class="white-text">{{ dialogData.companyName }}</h2>
+  <p>id: {{ dialogData.id }}</p>
+  <mat-divider></mat-divider>
+  <ul>
+    <li><p class="grey-text">Vat number: </p> <p class="white-text">{{ dialogData.vatNumber }}</p> </li>
+    <li><p class="grey-text">Address: </p> <p class="white-text">{{ dialogData.address }}</p> </li>
+    <li><p class="grey-text">IBAN: </p> <p class="white-text">{{ dialogData.iban }}</p> </li>
+    <li><p class="grey-text">Phone number: </p> <p class="white-text">{{ dialogData.phoneNumber }}</p> </li>
+    <li><p class="grey-text">E-mail: </p> <p class="white-text">{{ dialogData.email }}</p> </li>
+    <li><p class="grey-text">PEC: </p> <p class="white-text">{{ dialogData.pec }}</p> </li>
+    <li><p class="grey-text">Fax: </p> <p class="white-text">{{ dialogData.fax }}</p> </li>
+  </ul>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button class="close-button" mat-stroked-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
