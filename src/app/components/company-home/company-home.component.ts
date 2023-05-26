@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CompanyDTO } from 'src/app/dto/companyDTO';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-company-home',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./company-home.component.css']
 })
 export class CompanyHomeComponent {
+  companyService = inject(CompanyService)
+  
+  companies?: CompanyDTO[]
 
+  ngOnInit() {
+    this.companyService.getCompanies().subscribe({
+      next: (data: any) => {
+        console.log(data)
+        this.companies = data
+      },
+      error: () => {
+        console.log('getCompanies error')
+      }
+    })
+  }
 }

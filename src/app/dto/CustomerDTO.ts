@@ -1,4 +1,5 @@
 export interface CustomerDTO {
+  id : number;
   customerName : string;
   vatNumber : string;
   address : string;

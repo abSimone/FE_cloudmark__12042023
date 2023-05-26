@@ -14,11 +14,16 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatRippleModule} from "@angular/material/core";
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+
 import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common'
+
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+
 
 
 @NgModule({
@@ -28,7 +33,11 @@ import { DatePipe } from '@angular/common'
     EmployeeListComponent,
     CustomerListComponent,
     EmployeeDetailComponent,
+
     EmployeeUpdateFormComponent
+
+    CustomerHomeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -37,9 +46,13 @@ import { DatePipe } from '@angular/common'
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
+
     FormsModule,
     ReactiveFormsModule,
     DatePipe
+
+    MatRippleModule
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

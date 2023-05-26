@@ -1,16 +1,25 @@
 <div class="container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Azienda 1</mat-card-title>
-      <mat-card-subtitle>Azienda</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Email: azienda1@email.com</p>
-      <p>Phone number: 0123456789</p>
-      <mat-divider></mat-divider>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-stroked-button color="basic" >OPEN</button>
-    </mat-card-actions>
-  </mat-card>
+  <div fxLayout="row wrap" fxLayoutGap="10px grid">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%"
+      *ngFor="let company of companies">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ company.companyName }}</mat-card-title>
+          <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Contacts: <br />
+            - {{ company.email }} <br />
+            - {{ company.phoneNumber }}
+          </p>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="open-button" mat-flat-button color="primary">Open</button>
+          <button mat-flat-button color="primary">Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>
