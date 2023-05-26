@@ -14,6 +14,7 @@ import { CompanyDetailsComponent } from './components/company-details/company-de
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
 import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 
 
@@ -25,6 +26,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
     EmployeeListComponent,
     EmployeeDetailComponent,
     EmployeeUpdateFormComponent,
+    CustomerHomeComponent,
     CustomerListComponent
   ],
   imports: [

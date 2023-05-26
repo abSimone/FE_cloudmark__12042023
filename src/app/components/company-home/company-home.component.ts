@@ -17,7 +17,7 @@ export class CompanyHomeComponent {
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
-      next: (data: any) => {
+      next: (data: CompanyDTO[]) => {
         console.log(data)
         this.companies = data
       },
