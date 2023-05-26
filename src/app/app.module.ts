@@ -34,7 +34,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     CustomerListComponent,
     EmployeeDetailComponent,
 
-    EmployeeUpdateFormComponent
+    EmployeeUpdateFormComponent,
 
     CustomerHomeComponent
 
@@ -49,8 +49,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
 
     FormsModule,
     ReactiveFormsModule,
-    DatePipe
-
+    DatePipe,
     MatRippleModule
 
   ],
