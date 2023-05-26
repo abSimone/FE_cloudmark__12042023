@@ -98,8 +98,8 @@
         </div>
 
         <div class="buttons">
-            <button mat-button mat-dialog-close>Close</button>
-            <button type="submit" mat-button mat-dialog-close color="primary" [disabled]="sendStatus()">Send</button>
+            <button mat-button mat-dialog-close><mat-icon>close</mat-icon>Close</button>
+            <button type="submit" mat-button mat-dialog-close color="primary" [disabled]="sendStatus()"><mat-icon>send</mat-icon>Send</button>
         </div>
 
         <div [ngSwitch]="updateResult">
