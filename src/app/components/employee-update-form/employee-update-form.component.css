@@ -18,6 +18,8 @@ p,h2 {
 
  .buttons{
     width: 100%;
+    display: flex;
+    justify-content: end;
  }
 
 
