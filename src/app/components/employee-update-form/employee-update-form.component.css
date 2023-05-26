@@ -2,3 +2,27 @@ p,h2 {
     color: white;
 }
 
+/* .md-dialog-container {
+    background-color: #000;
+    width: 1000px;
+    height: 250px
+}
+ */
+
+ form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ }
+
+
+ .buttons{
+    width: 100%;
+ }
+
+
+ .header{
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+ }

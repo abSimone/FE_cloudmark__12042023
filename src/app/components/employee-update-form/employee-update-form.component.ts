@@ -5,6 +5,11 @@ import { EmployeeDTO } from 'src/app/dto/EmployeeDTO';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { DatePipe } from '@angular/common'
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+
+
+
 
 
 const regexEmail = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
@@ -20,7 +25,9 @@ export class EmployeeUpdateFormComponent implements OnInit {
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
   datePipe = inject(DatePipe);
-
+  snackBar=inject(MatSnackBar);
+  //spinner=inject(MatProgressSpinner);
+  
 
   updateResult: number = 0
 
@@ -54,6 +61,14 @@ export class EmployeeUpdateFormComponent implements OnInit {
   }
 
   onSubmit() {
+    //const spinner=this.spinner
+    
+
+    let snackbar=this.snackBar.open("Caricamento","close",{
+      verticalPosition:"top",
+      duration: 2000
+    });
+
     let employeeUpdated = {
       id: this.dialogData.id,
       firstName: this.employee.value.firstName!,
@@ -75,12 +90,19 @@ export class EmployeeUpdateFormComponent implements OnInit {
       (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
 
-
+        snackbar=this.snackBar.open("Successo","close",{
+          verticalPosition:"top",
+          duration: 2000
+        });
         console.log("successo");
         this.updateResult = 1
 
       },
       (error) => {
+        snackbar=this.snackBar.open("Errore","close",{
+          verticalPosition:"top",
+          duration: 2000
+        });
         console.log(error);
         this.updateResult = -1
       }

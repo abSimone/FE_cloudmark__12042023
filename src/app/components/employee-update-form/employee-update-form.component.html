@@ -1,4 +1,8 @@
-<h2>Update employee</h2>
+<div class="header">
+    <h2>Update employee</h2>
+</div>
+
+<mat-divider></mat-divider>
 
 <mat-dialog-content>
     <form [formGroup]="employee" (ngSubmit)="onSubmit()">
@@ -93,11 +97,9 @@
             </mat-form-field>
         </div>
 
-
-
-        <div>
+        <div class="buttons">
             <button mat-button mat-dialog-close>Close</button>
-            <button type="submit" mat-raised-button color="primary" [disabled]="sendStatus()">Send</button>
+            <button type="submit" mat-button mat-dialog-close color="primary" [disabled]="sendStatus()">Send</button>
         </div>
 
         <div [ngSwitch]="updateResult">
@@ -106,7 +108,7 @@
             <div *ngSwitchCase="1" [ngStyle]="{'color':'green'}">Update avvenuto con successo</div>
         </div>
         
-
-
     </form>
 </mat-dialog-content>
+
+

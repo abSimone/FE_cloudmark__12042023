@@ -49,7 +49,8 @@ export class EmployeeListComponent implements OnInit {
     const dialogDetail = this.dialogDetail.open(EmployeeUpdateFormComponent,
       {
         data: employee,
-        width:"400px"
+        width:"700px",
+        
         
       }
     )
