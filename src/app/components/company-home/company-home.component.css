@@ -2,10 +2,6 @@
   margin: 10px;
 }
 
-.mat-drawer-container {
-  height: 100%;
-}
-
 
 /* toolbar */
 
@@ -26,6 +22,44 @@
 
 .toolbar-button {
   margin-right: 10px;
+}
+
+
+/* account */
+
+.expansion-container {
+  display: flex;
+  position: fixed;
+  z-index: 2;
+
+  top: 8px;
+  right: 10px;
+}
+
+.expansion-panel {
+  width: 175px;
+}
+
+.logout-button {
+  width: 100%;
+}
+
+.grey-text {
+  display: inline;
+  color: #c7c7c7;
+}
+
+
+/* search */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  width: 30%;
+  margin-top: 10px;
 }
 
 
@@ -59,6 +93,10 @@ li {
 
 
 /* drawer */
+
+.mat-drawer-container {
+  height: 100%;
+}
 
 .mat-drawer {
   width: 250px;

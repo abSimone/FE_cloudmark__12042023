@@ -12,12 +12,19 @@ export class CustomerListComponent implements OnInit, OnDestroy{
 
   customerList$: Observable<CustomerDTO[]> = this.customerService.findAll();
   findAllSubscription! : Subscription;
+  isLoading : boolean = true;
 
   constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
-    this.findAllSubscription = this.customerService.findAll().subscribe({next: data => console.log(data)});
+    this.findAllSubscription = this.customerService.findAll().subscribe({
+      next: data => {
+        console.log(data);
+        this.isLoading = false;
+      }
+    });
+
   }
 
 

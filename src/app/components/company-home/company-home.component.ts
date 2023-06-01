@@ -32,4 +32,5 @@ export class CompanyHomeComponent {
   }
 
   value = '';
+  panelOpenState = false;
 }
