@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./company-search.component.css']
 })
 export class CompanySearchComponent {
-  value = ""
+  value = ''
 }

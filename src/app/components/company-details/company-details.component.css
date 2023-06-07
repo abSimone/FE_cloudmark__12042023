@@ -3,8 +3,15 @@ h2 {
   margin-bottom: 0;
 }
 
+h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 p {
   margin-bottom: 10px;
+  display: inline;
+  font-size: 14px;
 }  
 
 ul {
@@ -18,11 +25,6 @@ li {
 .close-button {
   margin: 10px;
   margin-top: -20px;
-}
-
-.text {
-  display: inline;
-  font-size: small;
 }
 
 .white-color {
