@@ -3,3 +3,18 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html { background-color: #303030; }
+
+/* class snackbar employee */
+.green-snackbar {
+    --mdc-snackbar-container-color: rgb(65, 252, 134);
+    color: white;
+}
+
+.red-snackbar {
+    --mdc-snackbar-container-color: #F44336;
+    color: white;
+}
+
+.loading-snackbar{
+    --mdc-snackbar-container-color: rgb(233, 30, 99);
+}
