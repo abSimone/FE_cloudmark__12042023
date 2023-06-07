@@ -18,7 +18,7 @@ export class EmployeeListComponent implements OnInit {
   employeeService = inject(EmployeeService);
 
 
-  employeeList$ = this.employeeService.getAllEmployee();
+  employeeList$ ?: EmployeeDTO[]
 
   isLoading:Boolean=true;
 
@@ -26,6 +26,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getAllEmployee().subscribe({
       next: (data) => {
         console.log(data);
+        this.employeeList$=data
         this.isLoading=false;
 
       }
