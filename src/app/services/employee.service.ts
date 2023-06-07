@@ -18,13 +18,9 @@ export class EmployeeService {
 
   getAllEmployee(){
     return this.http.get<EmployeeDTO[]>(urlAllEmployee)
-      .pipe(
-        switchMap((array:EmployeeDTO[])=>from(array)),
-        toArray()
-      )
   }
   getEmployeeById(id:number){
-    return this.http.get<EmployeeDTO>(urlAllEmployee+id)
+    return this.http.get<EmployeeDTO>(urlEmployeeById+id)
   }
 
   updateEmployee(employee:EmployeeDTO){
