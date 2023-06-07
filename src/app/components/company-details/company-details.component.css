@@ -20,12 +20,15 @@ li {
   margin-top: -20px;
 }
 
-.white-text {
-  color: #ffffff;
+.text {
   display: inline;
+  font-size: small;
 }
 
-.grey-text {
+.white-color {
+  color: #ffffff;
+}
+
+.grey-color {
   color: #c7c7c7;
-  display: inline;
 }

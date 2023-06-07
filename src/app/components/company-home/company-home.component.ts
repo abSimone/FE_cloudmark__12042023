@@ -4,6 +4,14 @@ import { CompanyService } from 'src/app/services/company.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CompanyDetailsComponent } from '../company-details/company-details.component';
 
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+import { CompanySearchComponent } from '../company-search/company-search.component';
+
+
 @Component({
   selector: 'app-company-home',
   templateUrl: './company-home.component.html',
@@ -14,6 +22,8 @@ export class CompanyHomeComponent {
   matDialog = inject(MatDialog)
 
   companies?: CompanyDTO[]
+
+  constructor(private _bottomSheet: MatBottomSheet) {}
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
@@ -29,6 +39,10 @@ export class CompanyHomeComponent {
 
   openDetails(company: CompanyDTO) {
     this.matDialog.open(CompanyDetailsComponent, {data: company})
+  }
+
+  openBottomSheet() {
+    this._bottomSheet.open(CompanySearchComponent, {hasBackdrop: false});
   }
 
   value = '';

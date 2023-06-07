@@ -19,7 +19,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -44,7 +45,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatToolbarModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBottomSheetModule,
+    MatListModule
   ]
 })
 export class MaterialModule { }

@@ -10,6 +10,12 @@
   </mat-expansion-panel>
 </div>
 
+<div class="search-container">
+  <button mat-fab class="no-box-shadow" color="primary" (click)="openBottomSheet()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+
 <mat-drawer-container [hasBackdrop]="false">
   <!-- toolbar -->
   <mat-toolbar class="first-tool-bar" color="primary">
@@ -20,16 +26,23 @@
     <span class="toolbar-spacer"></span>
   </mat-toolbar>
 
-  <!-- search bar -->
-  <div class="search-container">
-    <mat-form-field class="search-form" subscriptSizing="dynamic">
-      <mat-label>Search</mat-label>
-      <input matInput type="text" [(ngModel)]="value">
-      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
+
+  <!-- drawer -->
+  <mat-drawer #drawer mode="side">
+    <div class="container">
+      <p class="drawer-text">Manage</p>
+      <button class="drawer-button" mat-flat-button color="primary">Add company</button>
+      <button class="delete-button" mat-flat-button color="primary">Delete company</button>
+    </div>
+
+    <mat-divider class="drawer-divider"></mat-divider>
+
+    <div class="container">
+      <p class="drawer-text">Misc</p>
+      <button class="drawer-button" mat-flat-button color="primary">Export as CSV</button>
+    </div>
+  </mat-drawer>
+
 
   <!-- cards -->
   <div class="container">
@@ -50,39 +63,10 @@
           </mat-card-content>
           <mat-card-actions>
             <button class="card-button" mat-flat-button color="primary">Open</button>
-            <button class="card-button" mat-flat-button color="primary" (click)="openDetails(company)">Details</button>
+            <button class="card-button" mat-stroked-button (click)="openDetails(company)">Details</button>
           </mat-card-actions>
         </mat-card>
       </div>
     </div>
   </div>
-
-  <!-- drawer -->
-  <mat-drawer #drawer mode="side">
-    <div class="container">
-      <p class="drawer-text">Search</p>
-      <mat-form-field class="drawer-input" subscriptSizing="dynamic">
-        <mat-label>Company name</mat-label>
-        <input matInput [(ngModel)]="value">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-
-    <mat-divider class="drawer-divider"></mat-divider>
-
-    <div class="container">
-      <p class="drawer-text">Manage</p>
-      <button class="drawer-button" mat-flat-button color="primary">Add company</button>
-      <button class="delete-button" mat-flat-button color="primary">Delete company</button>
-    </div>
-
-    <mat-divider class="drawer-divider"></mat-divider>
-
-    <div class="container">
-      <p class="drawer-text">Misc</p>
-      <button class="drawer-button" mat-flat-button color="primary">Export as CSV</button>
-    </div>
-  </mat-drawer>
 </mat-drawer-container>
