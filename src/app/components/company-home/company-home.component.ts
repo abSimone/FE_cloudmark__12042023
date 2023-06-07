@@ -40,7 +40,11 @@ export class CompanyHomeComponent {
   }
 
   openDetails(company: CompanyDTO) {
-    this.matDialog.open(CompanyDetailsComponent, {data: company})
+    this.matDialog.open(CompanyDetailsComponent, {
+      data: company,
+      autoFocus: false,
+      restoreFocus: false
+    })
   }
 
   openBottomSheet() {
