@@ -40,11 +40,6 @@
   text-align: center;
 }
 
-/* .drawer-divider {
-  vertical-align: middle;
-  width: 90%;
-} */
-
 .drawer-input {
   width: 100%;
   margin-bottom: 5px;
@@ -56,10 +51,8 @@
 
 .delete-button {
   margin-top: 10px;
-  margin-bottom: 5px;
   width: 100%;
 }
-
 
 
 /* cards */
@@ -125,17 +118,4 @@ li {
 
   right: 10px;
   bottom: 10px;
-}
-
-.no-box-shadow {
-  box-shadow: none;
-}
-
-.mat-button-focus-overlay {
-  background-color:transparent;
-}
-
-.search-form {
-  width: 30%;
-  margin-top: 10px;
 }

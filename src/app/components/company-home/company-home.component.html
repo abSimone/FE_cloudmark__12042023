@@ -1,6 +1,6 @@
 <!-- account panel -->
 <div class="expansion-container">
-  <mat-expansion-panel class="expansion-panel" (opened)="panelOpenState=true" (closed)="panelOpenState=false">
+  <mat-expansion-panel class="expansion-panel mat-elevation-z2" (opened)="panelOpenState=true" (closed)="panelOpenState=false">
     <mat-expansion-panel-header>
       <mat-panel-title>Account</mat-panel-title>
     </mat-expansion-panel-header>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="search-container">
-  <button mat-fab class="no-box-shadow" color="primary" (click)="openBottomSheet()">
+  <button mat-fab class="mat-elevation-z0" color="primary" (click)="openBottomSheet()">
     <mat-icon>search</mat-icon>
   </button>
 </div>
