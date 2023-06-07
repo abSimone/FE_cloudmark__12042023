@@ -25,11 +25,11 @@ export class EmployeeUpdateFormComponent implements OnInit {
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
   datePipe = inject(DatePipe);
-  snackBar=inject(MatSnackBar);
+  snackBar = inject(MatSnackBar);
   //spinner=inject(MatProgressSpinner);
-  
 
-  updateResult: number = 0
+
+
 
   employee = this.fb.group({
     firstName: this.fb.control("", [Validators.maxLength(50), Validators.required]),
@@ -62,12 +62,8 @@ export class EmployeeUpdateFormComponent implements OnInit {
 
   onSubmit() {
     //const spinner=this.spinner
-    
 
-    let snackbar=this.snackBar.open("Caricamento","close",{
-      verticalPosition:"top",
-      duration: 2000
-    });
+    this.openSnackBar("Caricamento", ["loading-snackbar"])
 
     let employeeUpdated = {
       id: this.dialogData.id,
@@ -84,32 +80,29 @@ export class EmployeeUpdateFormComponent implements OnInit {
       company: this.dialogData.company,
     }
 
-    console.log(employeeUpdated);
 
     this.employeeService.updateEmployee(employeeUpdated).subscribe(
       (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
 
-        snackbar=this.snackBar.open("Successo","close",{
-          verticalPosition:"top",
-          duration: 2000
-        });
-        console.log("successo");
-        this.updateResult = 1
+        this.openSnackBar("Successo", ["green-snackbar"])
 
       },
       (error) => {
-        snackbar=this.snackBar.open("Errore","close",{
-          verticalPosition:"top",
-          duration: 2000
-        });
+        this.openSnackBar("Errore", ["red-snackbar"])
         console.log(error);
-        this.updateResult = -1
       }
     );
 
   }
 
+  openSnackBar(text: string, panelClass: string[]) {
+    this.snackBar.open(text, "close", {
+      verticalPosition: "top",
+      duration: 2000,
+      panelClass: panelClass
+    });
+  }
 
   sendStatus() {
     if (!this.employee.controls.firstName.invalid
