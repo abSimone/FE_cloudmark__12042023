@@ -1,21 +1,3 @@
-<!-- account panel -->
-<div class="expansion-container">
-  <mat-expansion-panel class="expansion-panel mat-elevation-z2" (opened)="panelOpenState=true" (closed)="panelOpenState=false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>Account</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p class="grey-text">User:</p> <p>paolo897</p>
-    <p class="grey-text">Type:</p> <p>admin</p>
-    <button class="logout-button" mat-flat-button color="primary">Log-out</button>
-  </mat-expansion-panel>
-</div>
-
-<div class="search-container">
-  <button mat-fab class="mat-elevation-z0" color="primary" (click)="openBottomSheet()">
-    <mat-icon>search</mat-icon>
-  </button>
-</div>
-
 <mat-drawer-container [hasBackdrop]="false">
   <!-- toolbar -->
   <mat-toolbar class="first-tool-bar" color="primary">
@@ -70,3 +52,22 @@
     </div>
   </div>
 </mat-drawer-container>
+
+<!-- account panel -->
+<div class="expansion-container">
+  <mat-expansion-panel class="expansion-panel mat-elevation-z2" (opened)="panelOpenState=true" (closed)="panelOpenState=false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Account</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="grey-text">User:</p> <p>paolo897</p>
+    <p class="grey-text">Type:</p> <p>admin</p>
+    <button class="logout-button" mat-flat-button color="primary">Log-out</button>
+  </mat-expansion-panel>
+</div>
+
+<!-- search button -->
+<div class="search-container">
+  <button mat-fab class="mat-elevation-z0" color="primary" (click)="openBottomSheet()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

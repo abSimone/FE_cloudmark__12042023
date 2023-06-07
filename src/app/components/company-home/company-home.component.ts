@@ -23,6 +23,8 @@ export class CompanyHomeComponent {
 
   companies?: CompanyDTO[]
 
+  showBottomSheet = false
+
   constructor(private _bottomSheet: MatBottomSheet) {}
 
   ngOnInit() {
@@ -42,7 +44,17 @@ export class CompanyHomeComponent {
   }
 
   openBottomSheet() {
-    this._bottomSheet.open(CompanySearchComponent, {hasBackdrop: false});
+    this.showBottomSheet = !this.showBottomSheet
+    
+    if (this.showBottomSheet == true) {
+      this._bottomSheet.open(CompanySearchComponent, {
+        hasBackdrop: false,
+        restoreFocus: false
+      });
+    }
+    else {
+      this._bottomSheet.dismiss()
+    }
   }
 
   value = '';
