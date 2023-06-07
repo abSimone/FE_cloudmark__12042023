@@ -1,8 +1,13 @@
 import { Component, inject } from '@angular/core';
+
+import { MatDialog } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+
 import { CompanyDTO } from 'src/app/dto/CompanyDTO';
 import { CompanyService } from 'src/app/services/company.service';
-import { MatDialog } from '@angular/material/dialog';
 import { CompanyDetailsComponent } from '../company-details/company-details.component';
+import { CompanySearchComponent } from '../company-search/company-search.component';
+
 
 @Component({
   selector: 'app-company-home',
@@ -12,8 +17,12 @@ import { CompanyDetailsComponent } from '../company-details/company-details.comp
 export class CompanyHomeComponent {
   companyService = inject(CompanyService)
   matDialog = inject(MatDialog)
+  bottomSheet = inject(MatBottomSheet)
 
   companies?: CompanyDTO[]
+
+  showBottomSheet = false
+  showExpansionPanel = false
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
@@ -28,7 +37,25 @@ export class CompanyHomeComponent {
   }
 
   openDetails(company: CompanyDTO) {
-    this.matDialog.open(CompanyDetailsComponent, {data: company})
+    this.matDialog.open(CompanyDetailsComponent, {
+      data: company,
+      autoFocus: false,
+      restoreFocus: false
+    })
+  }
+
+  openBottomSheet() {
+    this.showBottomSheet = !this.showBottomSheet
+    
+    if (this.showBottomSheet == true) {
+      this.bottomSheet.open(CompanySearchComponent, {
+        hasBackdrop: false,
+        restoreFocus: false
+      });
+    }
+    else {
+      this.bottomSheet.dismiss()
+    }
   }
 
   value = '';

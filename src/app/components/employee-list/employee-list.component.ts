@@ -7,6 +7,7 @@ import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-up
 
 import { saveAs } from 'file-saver';
 
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -64,7 +65,9 @@ export class EmployeeListComponent implements OnInit {
       const now = new Date();
 			let blob:any = new Blob([response], { type: 'text; charset=utf-8' });
       let fileName='employees'+now+'.csv';
+
 			saveAs(blob, fileName);
+
 			}), (error: any) => console.log('Error downloading the file'),
 			() => console.info('File downloaded successfully');
 

@@ -16,6 +16,7 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
 import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { CompanySearchComponent } from './components/company-search/company-search.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
     EmployeeDetailComponent,
     EmployeeUpdateFormComponent,
     CustomerHomeComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CompanySearchComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
-
-
 const regexEmail = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
 @Component({
@@ -25,11 +23,10 @@ export class EmployeeUpdateFormComponent implements OnInit {
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
   datePipe = inject(DatePipe);
-  snackBar = inject(MatSnackBar);
+
+  snackBar=inject(MatSnackBar);
   //spinner=inject(MatProgressSpinner);
-
-
-
+  
 
   employee = this.fb.group({
     firstName: this.fb.control("", [Validators.maxLength(50), Validators.required]),
@@ -84,12 +81,12 @@ export class EmployeeUpdateFormComponent implements OnInit {
     this.employeeService.updateEmployee(employeeUpdated).subscribe(
       (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
-
         this.openSnackBar("Successo", ["green-snackbar"])
 
       },
       (error) => {
         this.openSnackBar("Errore", ["red-snackbar"])
+
         console.log(error);
       }
     );

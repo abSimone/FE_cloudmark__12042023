@@ -1,8 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-html { background-color: #303030; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  background-color: #303030;
+
 
 /* class snackbar employee */
 .green-snackbar {
@@ -17,4 +26,5 @@ html { background-color: #303030; }
 
 .loading-snackbar{
     --mdc-snackbar-container-color: rgb(233, 30, 99);
+
 }
