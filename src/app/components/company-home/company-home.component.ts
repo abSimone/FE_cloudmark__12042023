@@ -26,6 +26,7 @@ export class CompanyHomeComponent {
 
   searchValue = ''
 
+  
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
       next: (data: CompanyDTO[]) => {
