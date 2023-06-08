@@ -46,7 +46,7 @@
   <!-- cards -->
   <div class="container">
     <div fxLayout="row wrap" fxLayoutGap="10px grid">
-      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let company of companies">
+      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let company of filteredCompanies">
         <mat-card>
           <mat-card-header>
             <mat-card-title>{{ company.companyName }}</mat-card-title>

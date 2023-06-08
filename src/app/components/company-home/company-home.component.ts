@@ -7,6 +7,7 @@ import { CompanyDTO } from 'src/app/dto/CompanyDTO';
 import { CompanyService } from 'src/app/services/company.service';
 import { CompanyDetailsComponent } from '../company-details/company-details.component';
 import { CompanySearchComponent } from '../company-search/company-search.component';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class CompanyHomeComponent {
   bottomSheet = inject(MatBottomSheet)
 
   companies?: CompanyDTO[]
+  filteredCompanies?: CompanyDTO[]
 
   showBottomSheet = false
   showExpansionPanel = false
@@ -32,6 +34,7 @@ export class CompanyHomeComponent {
       next: (data: CompanyDTO[]) => {
         console.log(data)
         this.companies = data
+        this.filteredCompanies = data
       },
       error: () => {
         console.log('getCompanies error')
@@ -40,8 +43,14 @@ export class CompanyHomeComponent {
 
     this.companyService.searchValue$.subscribe({
       next: (value: string) => {
-        this.searchValue = value
-        console.log(this.searchValue)
+        if (value != '') {
+          this.filteredCompanies = this.companies?.filter((company) => company.companyName.includes(value))
+        }
+        else {
+          this.filteredCompanies = this.companies
+        }
+        // this.searchValue = value
+        // console.log(this.searchValue)
       }
     })
   }
