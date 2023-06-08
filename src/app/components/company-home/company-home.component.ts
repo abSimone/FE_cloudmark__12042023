@@ -23,6 +23,7 @@ export class CompanyHomeComponent {
 
   showBottomSheet = false
   showExpansionPanel = false
+  searchIconState = 'search'
 
   searchValue = ''
 
@@ -61,9 +62,11 @@ export class CompanyHomeComponent {
         hasBackdrop: false,
         restoreFocus: false
       });
+      this.searchIconState = 'close'
     }
     else {
       this.bottomSheet.dismiss()
+      this.searchIconState = 'search'
     }
   }
 
