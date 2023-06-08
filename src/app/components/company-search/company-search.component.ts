@@ -9,9 +9,9 @@ import { CompanyService } from 'src/app/services/company.service';
 export class CompanySearchComponent {
   companyService = inject(CompanyService)
   
-  inputValue = ''
+  searchValue = ''
 
   onKeyup() {
-    this.companyService.searchValue$.next(this.inputValue)
+    this.companyService.searchValue$.next(this.searchValue)
   }
 }
