@@ -24,6 +24,8 @@ export class CompanyHomeComponent {
   showBottomSheet = false
   showExpansionPanel = false
 
+  searchValue = ''
+
   ngOnInit() {
     this.companyService.getCompanies().subscribe({
       next: (data: CompanyDTO[]) => {
@@ -32,6 +34,13 @@ export class CompanyHomeComponent {
       },
       error: () => {
         console.log('getCompanies error')
+      }
+    })
+
+    this.companyService.searchValue$.subscribe({
+      next: (value: string) => {
+        this.searchValue = value
+        console.log(this.searchValue)
       }
     })
   }
@@ -58,5 +67,4 @@ export class CompanyHomeComponent {
     }
   }
 
-  value = '';
 }

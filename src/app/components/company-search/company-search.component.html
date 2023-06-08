@@ -1,8 +1,8 @@
 <mat-nav-list>
   <mat-form-field class="search-field" subscriptSizing="dynamic">
     <mat-label>Search company</mat-label>
-    <input matInput [(ngModel)]="value" />
-    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+    <input matInput (keyup)="onKeyup()" [(ngModel)]="inputValue" />
+    <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue = ''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-company-search',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./company-search.component.css']
 })
 export class CompanySearchComponent {
-  value = ''
+  companyService = inject(CompanyService)
+  
+  inputValue = ''
+
+  onKeyup() {
+    this.companyService.searchValue$.next(this.inputValue)
+  }
 }
