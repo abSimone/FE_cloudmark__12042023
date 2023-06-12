@@ -36,8 +36,8 @@ export class CompanyHomeComponent {
         this.companies = data
         this.filteredCompanies = data
       },
-      error: () => {
-        console.log('getCompanies error')
+      error: (error) => {
+        console.log('getCompanies error: ', error)
       }
     })
 
