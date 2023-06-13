@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { CompanyDTO } from '../dto/CompanyDTO';
 
 
-const url = 'http://localhost:8080/api/company/' 
+const url = 'http://15.161.64.149:8080/api/company/'
 
 @Injectable({
   providedIn: 'root'

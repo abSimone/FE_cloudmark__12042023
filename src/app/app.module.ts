@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './module/material.module';
+import { MaterialModule } from './modules/material.module';
 import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';

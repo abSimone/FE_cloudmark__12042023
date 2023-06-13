@@ -13,7 +13,7 @@
 <!-- search button -->
 <div class="search-container">
   <button mat-fab class="mat-elevation-z0" color="primary" (click)="openBottomSheet()">
-    <mat-icon>search</mat-icon>
+    <mat-icon>{{ searchIconState }}</mat-icon>
   </button>
 </div>
 
@@ -46,11 +46,11 @@
   <!-- cards -->
   <div class="container">
     <div fxLayout="row wrap" fxLayoutGap="10px grid">
-      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let company of companies">
+      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let company of filteredCompanies">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>{{ company.companyName }}</mat-card-title>
-            <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
+            <mat-card-title>{{ company.companyName | titlecase }}</mat-card-title>
+            <mat-card-subtitle>{{ company.address | titlecase }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p class="card-text">Contacts:</p>
