@@ -9,7 +9,7 @@ import { MaterialModule } from './modules/material.module';
 import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
-import { CompanyHomeComponent } from './components/company-home/company-home.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
@@ -22,7 +22,7 @@ import { CompanySearchComponent } from './components/company-search/company-sear
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyHomeComponent,
+    CompanyListComponent,
     CompanyDetailsComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,

@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
 
 
 @Component({
-  selector: 'app-company-home',
-  templateUrl: './company-home.component.html',
-  styleUrls: ['./company-home.component.css']
+  selector: 'app-company-list',
+  templateUrl: './company-list.component.html',
+  styleUrls: ['./company-list.component.css']
 })
-export class CompanyHomeComponent {
+export class CompanyListComponent {
   companyService = inject(CompanyService)
   matDialog = inject(MatDialog)
   bottomSheet = inject(MatBottomSheet)
