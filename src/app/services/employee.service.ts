@@ -3,10 +3,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { EmployeeDTO } from '../dto/EmployeeDTO';
 import { switchMap, toArray ,from} from 'rxjs';
 
-const urlAllEmployee="http://localhost:8080/api/employee/"
-const urlEmployeeById="http://localhost:8080/api/employee/id/"
-const urlUpdateEmployee="http://localhost:8080/api/employee/"
-const urlAllEmployeeCsv="http://localhost:8080/api/employee/csv"
+const urlAllEmployee="http://15.161.64.149:8080/api/employee/"
+const urlEmployeeById="http://15.161.64.149:8080/api/employee/id/"
+const urlUpdateEmployee="http://15.161.64.149:8080/api/employee/"
+const urlAllEmployeeCsv="http://15.161.64.149:8080/api/employee/csv"
 
 @Injectable({
   providedIn: 'root'
