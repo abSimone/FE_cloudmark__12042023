@@ -14,4 +14,9 @@ export class CompanySearchComponent {
   onKeyup() {
     this.companyService.searchValue$.next(this.searchValue)
   }
+
+  clearInput() {
+    this.searchValue = ''
+    this.companyService.searchValue$.next(this.searchValue)
+  }
 }

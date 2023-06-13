@@ -74,7 +74,7 @@ export class CompanyHomeComponent {
     
     if (this.showBottomSheet == true) {
       this.bottomSheet.open(CompanySearchComponent, {
-        autoFocus: false,
+        autoFocus: true,
         restoreFocus: false,
         hasBackdrop: false,
         disableClose: true
