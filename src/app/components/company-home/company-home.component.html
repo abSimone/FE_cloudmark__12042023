@@ -49,8 +49,8 @@
       <div fxFlex="20%" fxFlex.xs="100%" fxFlex.md="33%" fxFlex.sm="50%" *ngFor="let company of filteredCompanies">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>{{ company.companyName }}</mat-card-title>
-            <mat-card-subtitle>{{ company.address }}</mat-card-subtitle>
+            <mat-card-title>{{ company.companyName | titlecase }}</mat-card-title>
+            <mat-card-subtitle>{{ company.address | titlecase }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p class="card-text">Contacts:</p>
