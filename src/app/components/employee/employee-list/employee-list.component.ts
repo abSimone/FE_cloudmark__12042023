@@ -16,36 +16,25 @@ import { EmployeeDeleteDialogComponent } from '../employee-delete-dialog/employe
 })
 export class EmployeeListComponent implements OnInit {
 
-
   employeeService = inject(EmployeeService);
-
+  dialogDetail = inject(MatDialog);
 
   employeeList$?: EmployeeDTO[]
 
   isLoading: Boolean = true;
 
   ngOnInit(): void {
-    this.employeeService.getAllEmployee().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.employeeList$ = data
-        this.isLoading = false;
-
-      }
-    });
-
+    this.refresh();
     this.employeeService.Refresh.subscribe((response) => this.refresh())
-
   }
 
-  dialogDetail = inject(MatDialog);
+  
 
 
   openDetail(employee: EmployeeDTO) {
     const dialogDetail = this.dialogDetail.open(EmployeeDetailComponent,
       {
         data: employee,
-
       }
     )
   }
@@ -56,8 +45,6 @@ export class EmployeeListComponent implements OnInit {
       {
         data: employee,
         width: "700px",
-
-
       }
     )
   }
@@ -68,13 +55,11 @@ export class EmployeeListComponent implements OnInit {
         data: employee
       }
     )
-
   }
 
 
 
   esportaCSV() {
-
     this.employeeService.getAllEmployeeCSV().subscribe((response: any) => {
       const now = new Date();
       let blob: any = new Blob([response], { type: 'text; charset=utf-8' });
@@ -84,8 +69,6 @@ export class EmployeeListComponent implements OnInit {
 
     }), (error: any) => console.log('Error downloading the file'),
       () => console.info('File downloaded successfully');
-
-
   }
 
 
@@ -94,9 +77,8 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getAllEmployee().subscribe({
       next: (data) => {
         console.log(data);
-        this.employeeList$ = data
+        this.employeeList$ = data;
         this.isLoading = false;
-
       }
     });
   }

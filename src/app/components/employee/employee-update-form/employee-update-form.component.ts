@@ -23,9 +23,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
   datePipe = inject(DatePipe);
-
   snackBar=inject(MatSnackBar);
-  //spinner=inject(MatProgressSpinner);
   
 
   employee = this.fb.group({
@@ -59,8 +57,6 @@ export class EmployeeUpdateFormComponent implements OnInit {
   }
 
   onSubmit() {
-    //const spinner=this.spinner
-
     this.openSnackBar("Caricamento", ["loading-snackbar"])
 
     let employeeUpdated = {
@@ -83,11 +79,9 @@ export class EmployeeUpdateFormComponent implements OnInit {
       (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
         this.openSnackBar("Successo", ["green-snackbar"])
-
       },
       (error) => {
         this.openSnackBar("Errore", ["red-snackbar"])
-
         console.log(error);
       }
     );

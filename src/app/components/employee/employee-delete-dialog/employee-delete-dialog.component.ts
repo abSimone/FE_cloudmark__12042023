@@ -14,7 +14,6 @@ export class EmployeeDeleteDialogComponent {
 
   dialogData: EmployeeDTO = inject(MAT_DIALOG_DATA)
   employeeService = inject(EmployeeService);
-
   snackBar=inject(MatSnackBar);
 
   deleteEmployee(){
