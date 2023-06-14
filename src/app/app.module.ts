@@ -11,12 +11,13 @@ import { DatePipe } from '@angular/common'
 import { AppComponent } from './app.component';
 import { CompanyHomeComponent } from './components/company-home/company-home.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
-import { EmployeeListComponent } from './components/employee-list/employee-list.component';
-import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
-import { EmployeeUpdateFormComponent } from './components/employee-update-form/employee-update-form.component';
+
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { CompanySearchComponent } from './components/company-search/company-search.component';
+import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './components/employee/employee-detail/employee-detail.component';
+import { EmployeeUpdateFormComponent } from './components/employee/employee-update-form/employee-update-form.component';
 
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeDTO } from 'src/app/dto/EmployeeDTO';
 import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
 import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';

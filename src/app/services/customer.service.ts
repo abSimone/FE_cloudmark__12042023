@@ -3,8 +3,8 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CustomerDTO} from "../dto/CustomerDTO";
 
-const urlAllCustomers = "http://localhost:8080/api/customer/"
-const urlCustomerById = "http://localhost:8080/api/customer/id/"
+const urlAllCustomers = "http://15.161.64.149:8080/api/customer/"
+const urlCustomerById = "http://15.161.64.149:8080/api/customer/id/"
 @Injectable({
   providedIn: 'root'
 })

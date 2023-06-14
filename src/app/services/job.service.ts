@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {JobDTO} from "../dto/JobDTO";
 
-const urlFindAllJobsByCustomer = "http://localhost:8080/api/job/customer-id/"
+const urlFindAllJobsByCustomer = "http://15.161.64.149:8080/api/job/customer-id/"
 
 @Injectable({
   providedIn: 'root'
