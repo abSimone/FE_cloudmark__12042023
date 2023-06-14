@@ -7,5 +7,5 @@ export interface CompanyDTO {
     phoneNumber: number,
     email: string,
     pec: string,
-    fax: null,
+    fax: number | null,
 }

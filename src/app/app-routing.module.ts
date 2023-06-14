@@ -5,6 +5,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
 import { CustomerHomeComponent } from "./components/customer-home/customer-home.component";
+import { CompanyAddComponent } from './components/company-add/company-add.component';
 
 const routes: Routes = [
   { path: "alan", component: EmployeeListComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   // { path: "robert", component: CompanyHomeComponent },
 
   { path: "companies", component: CompanyListComponent },
+  { path: "companies-add", component: CompanyAddComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,149 @@
+<!-- toolbar -->
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="toolbar-span">Add company</span>
+  <span class="toolbar-spacer"></span>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="company">
+    <mat-card>
+      <!-- company name -->
+      <div class="top-input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>Company name</mat-label>
+          <input matInput name="companyName" formControlName="companyName" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('companyName')?.value" (click)="company.get('companyName')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('companyName')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('companyName')?.hasError('maxlength')">Company name is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- vat number -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>VAT number</mat-label>
+          <input matInput name="vatNumber" formControlName="vatNumber" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('vatNumber')?.value" (click)="company.get('vatNumber')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('vatNumber')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('vatNumber')?.hasError('maxlength')">VAT number name is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- address -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>Address</mat-label>
+          <input matInput name="address" formControlName="address" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('address')?.value" (click)="company.get('address')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('address')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('address')?.hasError('maxlength')">Address name is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- iban -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>IBAN</mat-label>
+          <input matInput name="iban" formControlName="iban" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('iban')?.value" (click)="company.get('iban')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('iban')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('iban')?.hasError('maxlength')">IBAN is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- phone number -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>Phone number</mat-label>
+          <input matInput name="phoneNumber" formControlName="phoneNumber" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('phoneNumber')?.value" (click)="company.get('phoneNumber')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('phoneNumber')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('phoneNumber')?.hasError('maxlength')">Phone number is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- email -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>E-mail</mat-label>
+          <input matInput name="email" formControlName="email" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('email')?.value" (click)="company.get('email')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('email')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('email')?.hasError('email')">E-mail is not valid</mat-error>
+          <mat-error *ngIf="company.get('email')?.hasError('maxlength')">E-mail is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- pec -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>PEC</mat-label>
+          <input matInput name="pec" formControlName="pec" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('pec')?.value" (click)="company.get('pec')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+        
+          <mat-error *ngIf="company.get('pec')?.hasError('required')">This field cannot be empty</mat-error>
+          <mat-error *ngIf="company.get('pec')?.hasError('email')">PEC is not valid</mat-error>
+          <mat-error *ngIf="company.get('pec')?.hasError('maxlength')">PEC is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- fax -->
+      <div class="input-container">
+        <mat-form-field subscriptSizing="dynamic">
+          <mat-label>Fax</mat-label>
+          <input matInput name="fax" formControlName="fax" />
+        
+          <button class="clear-button" mat-icon-button matSuffix aria-label="Clear" type="button"
+            *ngIf="company.get('fax')?.value" (click)="company.get('fax')?.reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+
+          <mat-error *ngIf="company.get('fax')?.hasError('maxlength')">Fax is too long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- buttons -->
+      <div class="input-container">
+        <button class="action-button" mat-flat-button color="primary" type="submit" [disabled]="!company.valid">Save</button>
+        <button class="action-button" mat-stroked-button (click)="backToList()">Discard</button>
+      </div>
+    </mat-card>
+  </form>
+</div>

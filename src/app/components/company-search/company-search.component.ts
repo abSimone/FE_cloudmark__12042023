@@ -12,11 +12,11 @@ export class CompanySearchComponent {
   searchValue = ''
 
   onKeyup() {
-    this.companyService.searchValue$.next(this.searchValue)
+    this.companyService.searchValue$.next(this.searchValue.toLowerCase())
   }
 
   clearInput() {
     this.searchValue = ''
-    this.companyService.searchValue$.next(this.searchValue)
+    this.companyService.searchValue$.next(this.searchValue.toLowerCase())
   }
 }

@@ -7,7 +7,7 @@ import { CompanyDTO } from 'src/app/dto/CompanyDTO';
 import { CompanyService } from 'src/app/services/company.service';
 import { CompanyDetailsComponent } from '../company-details/company-details.component';
 import { CompanySearchComponent } from '../company-search/company-search.component';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +19,7 @@ export class CompanyListComponent {
   companyService = inject(CompanyService)
   matDialog = inject(MatDialog)
   bottomSheet = inject(MatBottomSheet)
+  router = inject(Router)
 
   companies?: CompanyDTO[]
   filteredCompanies?: CompanyDTO[]
@@ -47,7 +48,6 @@ export class CompanyListComponent {
           let emails = this.companies?.filter((company) => company.email.includes(value))
           let phoneNumbers = this.companies?.filter((company) => company.phoneNumber.toString().includes(value))
 
-          // merge arrays
           let searchResults = companyNames!.concat(addresses!, emails!, phoneNumbers!)
 
           // remove duplicates
@@ -58,14 +58,6 @@ export class CompanyListComponent {
           this.filteredCompanies = this.companies
         }
       }
-    })
-  }
-
-  openDetails(company: CompanyDTO) {
-    this.matDialog.open(CompanyDetailsComponent, {
-      data: company,
-      autoFocus: false,
-      restoreFocus: false
     })
   }
 
@@ -86,6 +78,18 @@ export class CompanyListComponent {
       this.searchIconState = 'search'
       this.filteredCompanies = this.companies
     }
+  }
+
+  openCompanyAdd () {
+    this.router.navigate(['companies-add']);
+  }
+
+  openCompanyDetails(company: CompanyDTO) {
+    this.matDialog.open(CompanyDetailsComponent, {
+      data: company,
+      autoFocus: false,
+      restoreFocus: false
+    })
   }
 
 }

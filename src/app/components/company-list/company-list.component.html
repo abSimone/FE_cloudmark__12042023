@@ -19,7 +19,7 @@
 
 <mat-drawer-container [hasBackdrop]="false">
   <!-- toolbar -->
-  <mat-toolbar class="first-tool-bar" color="primary">
+  <mat-toolbar color="primary">
     <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -31,7 +31,7 @@
   <mat-drawer #drawer mode="side">
     <div class="container">
       <p class="drawer-text">Manage</p>
-      <button class="drawer-button" mat-flat-button color="primary">Add company</button>
+      <button class="drawer-button" mat-flat-button color="primary" (click)="openCompanyAdd()">Add company</button>
       <button class="delete-button" mat-flat-button color="primary">Delete company</button>
     </div>
 
@@ -62,7 +62,7 @@
           </mat-card-content>
           <mat-card-actions>
             <button class="card-button" mat-flat-button color="primary">Open</button>
-            <button class="card-button" mat-stroked-button (click)="openDetails(company)">Details</button>
+            <button class="card-button" mat-stroked-button (click)="openCompanyDetails(company)">Details</button>
           </mat-card-actions>
         </mat-card>
       </div>
