@@ -6,7 +6,9 @@ import { switchMap, toArray ,from} from 'rxjs';
 const urlAllEmployee="http://15.161.64.149:8080/api/employee/"
 const urlEmployeeById="http://15.161.64.149:8080/api/employee/id/"
 const urlUpdateEmployee="http://15.161.64.149:8080/api/employee/"
+const urlDeleteEmployee="http://15.161.64.149:8080/api/employee/id/"
 const urlAllEmployeeCsv="http://15.161.64.149:8080/api/employee/csv"
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,10 @@ export class EmployeeService {
 
   updateEmployee(employee:EmployeeDTO){
     return this.http.put<EmployeeDTO | HttpErrorResponse>(urlUpdateEmployee,employee)
+  }
+
+  deleteEmployee(employee:EmployeeDTO){
+    return this.http.delete(urlDeleteEmployee+employee.id, {responseType: 'text'})
   }
 
 

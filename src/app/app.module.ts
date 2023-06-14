@@ -18,6 +18,7 @@ import { CompanySearchComponent } from './components/company-search/company-sear
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './components/employee/employee-detail/employee-detail.component';
 import { EmployeeUpdateFormComponent } from './components/employee/employee-update-form/employee-update-form.component';
+import { EmployeeDeleteDialogComponent } from './components/employee/employee-delete-dialog/employee-delete-dialog.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EmployeeUpdateFormComponent } from './components/employee/employee-upda
     EmployeeUpdateFormComponent,
     CustomerHomeComponent,
     CustomerListComponent,
-    CompanySearchComponent
+    CompanySearchComponent,
+    EmployeeDeleteDialogComponent
   ],
   imports: [
     BrowserModule,

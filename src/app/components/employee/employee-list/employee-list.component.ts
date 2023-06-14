@@ -6,6 +6,7 @@ import { EmployeeDetailComponent } from '../employee-detail/employee-detail.comp
 import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 
 import { saveAs } from 'file-saver';
+import { EmployeeDeleteDialogComponent } from '../employee-delete-dialog/employee-delete-dialog.component';
 
 
 @Component({
@@ -19,16 +20,16 @@ export class EmployeeListComponent implements OnInit {
   employeeService = inject(EmployeeService);
 
 
-  employeeList$ ?: EmployeeDTO[]
+  employeeList$?: EmployeeDTO[]
 
-  isLoading:Boolean=true;
+  isLoading: Boolean = true;
 
   ngOnInit(): void {
     this.employeeService.getAllEmployee().subscribe({
       next: (data) => {
         console.log(data);
-        this.employeeList$=data
-        this.isLoading=false;
+        this.employeeList$ = data
+        this.isLoading = false;
 
       }
     });
@@ -41,42 +42,52 @@ export class EmployeeListComponent implements OnInit {
     const dialogDetail = this.dialogDetail.open(EmployeeDetailComponent,
       {
         data: employee,
-        
+
       }
     )
   }
 
-  
-  updateEmployee(employee: EmployeeDTO){
+
+  updateEmployee(employee: EmployeeDTO) {
     const dialogDetail = this.dialogDetail.open(EmployeeUpdateFormComponent,
       {
         data: employee,
-        width:"700px",
-        
-        
+        width: "700px",
+
+
       }
     )
   }
 
+  deleteEmployeeOpenDialog(employee: EmployeeDTO) {
+    console.log("Cliccato delete employee")
+    this.dialogDetail.open(EmployeeDeleteDialogComponent,
+      {
+        data: employee
+      }
+    )
+
+  }
 
 
-  esportaCSV(){
-    
+
+  esportaCSV() {
+
     this.employeeService.getAllEmployeeCSV().subscribe((response: any) => {
       const now = new Date();
-			let blob:any = new Blob([response], { type: 'text; charset=utf-8' });
-      let fileName='employees'+now+'.csv';
+      let blob: any = new Blob([response], { type: 'text; charset=utf-8' });
+      let fileName = 'employees' + now + '.csv';
 
-			saveAs(blob, fileName);
+      saveAs(blob, fileName);
 
-			}), (error: any) => console.log('Error downloading the file'),
-			() => console.info('File downloaded successfully');
+    }), (error: any) => console.log('Error downloading the file'),
+      () => console.info('File downloaded successfully');
 
 
   }
 
 
 
-  
+
 
 }

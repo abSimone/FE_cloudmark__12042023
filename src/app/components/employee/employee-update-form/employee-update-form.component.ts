@@ -77,7 +77,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
       company: this.dialogData.company,
     }
 
-
+    
     this.employeeService.updateEmployee(employeeUpdated).subscribe(
       (result: EmployeeDTO | HttpErrorResponse) => {
         console.log(result)
