@@ -86,6 +86,19 @@ export class EmployeeListComponent implements OnInit {
   }
 
 
+  refresh(){
+    this.isLoading = true;
+    this.employeeService.getAllEmployee().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.employeeList$ = data
+        this.isLoading = false;
+
+      }
+    });
+  }
+
+
 
 
 
