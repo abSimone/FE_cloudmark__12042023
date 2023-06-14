@@ -55,6 +55,7 @@ export class EmployeeUpdateFormComponent implements OnInit {
       contractType: this.dialogData.contractType?.toString(),
       contractStart: this.dialogData.contractStart?.toString(),
     })
+    this.employee.markAllAsTouched(); //segna come cliccati tutti i campi, in modo da abilitare subito la validazione
   }
 
   onSubmit() {
