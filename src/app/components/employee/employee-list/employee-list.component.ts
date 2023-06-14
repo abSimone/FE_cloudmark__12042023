@@ -60,7 +60,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployeeOpenDialog(employee: EmployeeDTO) {
-    console.log("Cliccato delete employee")
     this.dialogDetail.open(EmployeeDeleteDialogComponent,
       {
         data: employee
