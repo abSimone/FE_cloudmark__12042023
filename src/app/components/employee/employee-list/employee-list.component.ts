@@ -33,6 +33,9 @@ export class EmployeeListComponent implements OnInit {
 
       }
     });
+
+    this.employeeService.Refresh.subscribe((response) => this.refresh())
+
   }
 
   dialogDetail = inject(MatDialog);
@@ -86,7 +89,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
 
-  refresh(){
+  refresh() {
     this.isLoading = true;
     this.employeeService.getAllEmployee().subscribe({
       next: (data) => {
