@@ -18,6 +18,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { CompanySearchComponent } from './components/company-search/company-search.component';
 import { CompanyAddComponent } from './components/company-add/company-add.component';
+import { CompanyAddTablesComponent } from './components/company-add-tables/company-add-tables.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CompanyAddComponent } from './components/company-add/company-add.compon
     CustomerHomeComponent,
     CustomerListComponent,
     CompanySearchComponent,
-    CompanyAddComponent
+    CompanyAddComponent,
+    CompanyAddTablesComponent
   ],
   imports: [
     BrowserModule,

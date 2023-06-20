@@ -1,0 +1,55 @@
+<div class="container">
+  <mat-card>
+    <div class="title-container">
+      <mat-card-title>Employees</mat-card-title>
+    </div>
+
+    <div class="tables-container">
+      <div class="selected-table">
+        <table mat-table [dataSource]="selectedDataSource" class="mat-elevation-z0">
+          <ng-container matColumnDef="selected">
+            <th mat-header-cell *matHeaderCellDef>Selected:</th>
+            <td mat-cell *matCellDef="let element">{{ element.firstName }} {{ element.lastName }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="selectedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: selectedColumns"></tr>
+        </table>
+
+        <mat-paginator
+          #selectedPaginator
+          [pageSize]="selectedPaginatorSize"
+          [hidePageSize]="true"
+        ></mat-paginator>
+      </div>
+
+      <div class="available-table">
+        <table
+          mat-table
+          [dataSource]="availableDataSource"
+          class="mat-elevation-z0"
+        >
+          <ng-container matColumnDef="available">
+            <th mat-header-cell *matHeaderCellDef>Available:</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.firstName }} {{ element.lastName }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="availableColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: availableColumns"
+            (click)="selectActor(row.actorId)"
+          ></tr>
+        </table>
+
+        <mat-paginator
+          #availablePaginator
+          [pageSize]="10"
+          [hidePageSize]="true"
+        ></mat-paginator>
+      </div>
+    </div>
+  </mat-card>
+</div>

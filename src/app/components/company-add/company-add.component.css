@@ -1,8 +1,13 @@
 /* containers */
 
-.container {
+.form-container, .tables-container {
+  display: inline-flex;
   width: fit-content;
   margin: 10px;
+}
+
+.tables-container {
+  margin-left: 0;
 }
 
 .top-input-container {
